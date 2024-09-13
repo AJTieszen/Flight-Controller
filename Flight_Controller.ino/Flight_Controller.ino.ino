@@ -1,18 +1,22 @@
+#include <Joystick.h>
+Joystick_ joystick;
+
+// Analog Pin Definitions
+#define THROTTLE_L 0
+#define THROTTLE_R 1
+
+// Digital Pin Definitions
 
 
-int led_delta = 1;
-int led_intensity = 0;
+// Analog states
+int throttle_l = 0;
+int throttle_r = 0;
 
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  // Start Gamepad Emulation
+  joystick.begin();
 }
 
 void loop() {
-  analogWrite(LED_BUILTIN, led_intensity);
-  led_intensity += led_delta;
-
-  if(led_intensity >= 255) led_delta = -1;
-  if(led_intensity <= 0) led_delta = 1;
-
-  delay(5);
+  // Read In
 }
